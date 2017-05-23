@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Crystal Game</title>
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Barrio" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Khula" rel="stylesheet">
+
+	<style>
+
+	h1{
+		color:white;
+		background-color: #F9966B;
+		font-family: 'Barrio', cursive;
+		width:500px;
+		font-size:40px;
+	}
+
+	body{
+ 		background: #728FCE;
+ 		margin:50px;
+ 		width: 500px;
+ 		font-family: 'Khula', sans-serif;
+ 		color:white;
+	}
+/*Backgound color for body text*/
+	.color{
+	background-color: #F9966B;
+	}
+/*Total Score is */
+	.total{
+		background: #F9966B;
+		width: 175px;
+
+	}
+	.totalbox{
+		background-color: #F9966B;
+		height:100px;
+		width:200px; 
+	}
+	.randombox{
+		background-color: #F9966B;
+		height:100px;
+		width:200px; 
+		margin-bottom:10px;
+	}
+
+	.results{
+		float:right;
+		background-color: #F9966B;
+		height:100px;
+		width:200px; 
+		position:relative;
+		bottom:110px;
+}
+
+	#images{
+		cursor:pointer;
+    	cursor:hand;
+}
+	
+	</style>
+
+</head>
+
+<body>
+
+<h1> Crystals Collector! </h1>
+
+<div class="color">
+	<p> You will be given a random number at the start of the game.</p>
+
+	<p> There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
+
+	<p> You win the game by matching you total score to a random number, you lose the game if your total score goes above the random number.</p>
+
+	<p> The value of each crystal is hidden from you until you click on it.</p>
+
+	<p> Each time when the game starts, the game will change the values of each crystal.
+	</p>
+
+</div>
+
+<p> CLICK BELOW TO GENERATE A RANDOM NUMBER </p>
+	<!-- 	<button onclick="myFunction()"> Get Number</button> -->
+
+	<button onclick="document.getElementById('number').innerHTML = getRndInteger(0,99)">Get Number</button>
+
+<script>
+
+// Get Random number
+	function getRndInteger(min, max) {
+    	return Math.floor(Math.random() * (max - min)) + min;
+    }
+
+
+</script>
+
+<!-- Random number box with number id  -->
+
+<div class="randombox"> 
+
+	<p id="number"> </p>
+
+</div>
+
+<!-- Win/ Lose box -->
+
+<div class="results"> </div>
+
+<!-- Crystal images -->
+<div id="images">
+
+	<span id="redcrystal"><img style="border: 1px solid black;height:80px"src="assets/red.png"/></span>
+
+	<span id="bluecrystal"><img style="border: 1px solid black;height:80px" src="assets/blue.png"/></span>
+
+	<span id="greencrystal"><img style="border: 1px solid black;height:80px" src="assets/green.png"/></span>
+
+	<span id="yellowcrystal"><img style="border: 1px solid black;height:80px" src="assets/yellow.png"/></span>
+</div>
+
+<!-- Total Score Class -->
+<div class="total">
+	<p>YOUR TOTAL SCORE IS:</p>
+</div>
+
+<!-- Total Box Class -->
+<div class="totalbox"> </div>
+
+<script src="jquery-1.12.0.min.js"></script>
+
+<script type="text/javascript" src="crystal.js"></script>
+
+</body>
+</html>
